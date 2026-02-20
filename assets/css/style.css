@@ -163,6 +163,11 @@ a:focus-visible {
   flex-shrink: 0;
 }
 
+#langToggle {
+  min-width: 74px;
+  justify-content: center;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -491,8 +496,24 @@ dd {
   scroll-margin-top: 96px;
 }
 
+@media (max-width: 760px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding: 14px 0;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .tagline {
+    white-space: normal;
+  }
+}
+
 /* Language switching */
-[data-lang] {
+:not(html)[data-lang] {
   display: none;
 }
 
@@ -515,4 +536,3 @@ dd {
 [data-lang="en"] .skip-link[data-lang="en"] {
   display: block;
 }
-

@@ -36,9 +36,7 @@ function syncThemeToggle(theme) {
   if (!btn) return;
   const isLight = theme === "light";
   btn.setAttribute("aria-pressed", String(isLight));
-
-  const label = btn.querySelector(".btn-label");
-  if (label) label.textContent = isLight ? "Light" : "Dark";
+  // 移除直接设置textContent的代码，让CSS双语规则生效
 }
 
 function wireThemeToggle() {
