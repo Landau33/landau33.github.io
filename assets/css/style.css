@@ -491,3 +491,28 @@ dd {
   scroll-margin-top: 96px;
 }
 
+/* Language switching */
+[data-lang] {
+  display: none;
+}
+
+[data-lang="zh"] [data-lang="zh"],
+[data-lang="en"] [data-lang="en"] {
+  display: inline;
+}
+
+[data-lang="zh"] [data-lang="zh"].btn-label,
+[data-lang="en"] [data-lang="en"].btn-label {
+  display: inline-block;
+}
+
+/* Skip link - show only current language */
+.skip-link {
+  display: none;
+}
+
+[data-lang="zh"] .skip-link[data-lang="zh"],
+[data-lang="en"] .skip-link[data-lang="en"] {
+  display: block;
+}
+
