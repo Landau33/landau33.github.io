@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)" />
+    <title>404 | 页面不存在</title>
+    <link rel="icon" href="assets/img/avatar.svg" />
+
+    <script>
+      (() => {
+        const THEME_KEY = "theme";
+        try {
+          const saved = localStorage.getItem(THEME_KEY);
+          const theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          if (theme === "light") document.documentElement.setAttribute("data-theme", "light");
+        } catch {}
+      })();
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main class="site-main">
+      <div class="container grid">
+        <section class="card full">
+          <h1>404</h1>
+          <p class="muted">这个页面不存在，可能链接写错了。</p>
+          <p><a class="btn" href="./">返回主页</a></p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
+
