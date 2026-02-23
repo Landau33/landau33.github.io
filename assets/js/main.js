@@ -106,3 +106,56 @@ wireThemeToggle();
 wireLangToggle();
 setYear();
 
+// 复制邮箱功能
+document.addEventListener('DOMContentLoaded', function() {
+    const copyEmailElement = document.querySelector('.copy-email');
+    if (copyEmailElement) {
+        copyEmailElement.addEventListener('click', function() {
+            const email = this.getAttribute('data-email');
+            navigator.clipboard.writeText(email).then(function() {
+                // 获取当前语言
+                const currentLang = document.documentElement.getAttribute('data-lang') || 'zh';
+                const tipText = currentLang === 'zh' ? '已复制到剪贴板' : 'Copied to clipboard';
+                
+                // 创建临时提示元素
+                const tooltip = document.createElement('div');
+                tooltip.textContent = tipText;
+                tooltip.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.8);
+                    color: white;
+                    padding: 12px 20px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    z-index: 10000;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                
+                document.body.appendChild(tooltip);
+                
+                // 显示提示
+                setTimeout(() => {
+                    tooltip.style.opacity = '1';
+                }, 10);
+                
+                // 1.5秒后隐藏并移除
+                setTimeout(() => {
+                    tooltip.style.opacity = '0';
+                    setTimeout(() => {
+                        document.body.removeChild(tooltip);
+                    }, 300);
+                }, 1500);
+                
+            }).catch(function(err) {
+                console.error('复制失败:', err);
+                // 如果clipboard API不可用，显示提示让用户手动复制
+                alert('请手动选择并复制邮箱地址: ' + email);
+            });
+        });
+    }
+});
