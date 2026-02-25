@@ -383,6 +383,17 @@ dd {
   letter-spacing: -0.02em;
 }
 
+.project-date {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(124, 92, 255, 0.95);
+}
+
+[data-theme="light"] .project-date {
+  color: #4f46e5;
+}
+
 .bullets {
   margin: 10px 0 0;
   padding-left: 18px;
