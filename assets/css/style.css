@@ -359,18 +359,19 @@ dd {
   gap: 12px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 760px) {
   .projects {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 .project {
+  display: flex;
+  flex-direction: column;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.04);
-  padding: 14px;
-  min-height: 220px;
+  padding: 16px;
 }
 
 [data-theme="light"] .project {
@@ -384,8 +385,8 @@ dd {
 }
 
 .project-date {
-  margin: 0 0 10px;
-  font-size: 14px;
+  margin: 0 0 6px;
+  font-size: 13px;
   font-weight: 600;
   color: rgba(124, 92, 255, 0.95);
 }
@@ -394,17 +395,31 @@ dd {
   color: #4f46e5;
 }
 
+/* Second meta line (role / type) shown quieter than the date */
+.project-date + .project-date {
+  margin-top: -2px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
 .bullets {
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   padding-left: 18px;
   color: var(--muted);
+  font-size: 14px;
+}
+
+.bullets li {
+  margin-bottom: 6px;
 }
 
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: auto;
+  padding-top: 14px;
 }
 
 .pill {
@@ -427,6 +442,49 @@ dd {
 .pill:focus-visible {
   outline: none;
   box-shadow: var(--ring);
+}
+
+.awards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 760px) {
+  .awards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.award {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="light"] .award {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.award-year {
+  flex-shrink: 0;
+  min-width: 40px;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.award-name {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .contact {
@@ -521,29 +579,4 @@ dd {
   .tagline {
     white-space: normal;
   }
-}
-
-/* Language switching */
-:not(html)[data-lang] {
-  display: none;
-}
-
-[data-lang="zh"] [data-lang="zh"],
-[data-lang="en"] [data-lang="en"] {
-  display: inline;
-}
-
-[data-lang="zh"] [data-lang="zh"].btn-label,
-[data-lang="en"] [data-lang="en"].btn-label {
-  display: inline-block;
-}
-
-/* Skip link - show only current language */
-.skip-link {
-  display: none;
-}
-
-[data-lang="zh"] .skip-link[data-lang="zh"],
-[data-lang="en"] .skip-link[data-lang="en"] {
-  display: block;
 }
