@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Personal Homepage | GitHub Pages" />
+    <meta
+      name="description"
+      content="Tu Yuang's personal homepage: robotics, dexterous manipulation, VLA models, world models, and reinforcement learning."
+    />
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)" />
 
     <meta property="og:title" content="Tu Yuang | Personal Homepage" />
-    <meta property="og:description" content="Personal Homepage | GitHub Pages" />
+    <meta
+      property="og:description"
+      content="Robotics researcher working on dexterous manipulation, VLA models, world models, and reinforcement learning."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content="assets/img/avatar.svg" />
@@ -61,7 +67,7 @@
           <div class="brand-text">
             <div class="name">Tu Yuang</div>
             <div class="tagline">
-              M.Sc in Mechanical Engineering · Robotics · NTU, Singapore
+              M.Sc. in Mechanical Engineering · Robotics · NTU, Singapore
             </div>
           </div>
         </div>
@@ -91,15 +97,12 @@
             Hi, I'm <span class="accent">Tu Yuang</span>.
           </h1>
           <p class="lead">
-            I am an M.Sc student in Mechanical Engineering at NTU, with research interests in robot learning
-              and embodied intelligence, centered on dexterous manipulation. My current work spans Vision-Language-Action (VLA) models,
-              world models, and reinforcement learning, with a focus on cross-task generalization, data efficiency, and real-time control
-              stability in complex real-world settings. I am doing a research attachment in robot learning at A*STAR's Advanced
-              Remanufacturing and Technology Centre (ARTC). In my thesis, I combine multimodal data collection on Mobile ALOHA with policy
-              fine-tuning and real-robot evaluation, systematically comparing pi0, ACT, and Diffusion Policy on transferability and robustness.
-              I also compete in the AI for Industry Challenge by Intrinsic (part of Google), building a HIL-SERL reinforcement-learning
-              pipeline for robotic cable insertion. On the engineering side, I bring experience from RoboMaster (World Champion), quadrotor
-              cyclocopter control and simulation, and computer-vision localization and perception.
+            I am an M.Sc. student in Mechanical Engineering at NTU, working on robot
+            learning and embodied intelligence. My research centers on dexterous manipulation,
+            Vision-Language-Action (VLA) models, world models, and reinforcement learning. I am
+            currently a research intern at A*STAR's Advanced Remanufacturing and Technology
+            Centre (ARTC), where I build teleoperation and learning pipelines for contact-rich,
+            bimanual manipulation.
           </p>
           <div class="hero-actions">
             <a class="btn" href="#projects">
@@ -124,10 +127,10 @@
             About Me
           </h2>
           <p>
-            I received my bachelor's degree in Energy and Power Engineering (Pilot Class)
-              from Shanghai Jiao Tong University in 2025, and I am pursuing a Master’s degree in
-              Mechanical Engineering at NTU, with a research focus on robot learning and embodied AI, centered on dexterous manipulation.
-              I am currently a research intern in robot learning at A*STAR's Advanced Remanufacturing and Technology Centre (ARTC).
+            I received my bachelor's degree in Energy and Power Engineering from Shanghai Jiao
+            Tong University in 2025 and am pursuing a master's degree in Mechanical Engineering
+            at Nanyang Technological University. My work combines real-robot experimentation,
+            multimodal data collection, policy fine-tuning, and reinforcement learning.
           </p>
           <dl class="kv">
             <div>
@@ -157,6 +160,28 @@
           </dl>
         </section>
 
+        <section class="card full" id="education" aria-labelledby="educationTitle">
+          <div class="section-head">
+            <h2 id="educationTitle">
+              Education
+            </h2>
+          </div>
+
+          <div class="projects">
+            <article class="project">
+              <h3>Nanyang Technological University</h3>
+              <p class="project-date">Aug 2025-present · Singapore</p>
+              <p class="project-date">Master of Science in Mechanical Engineering</p>
+            </article>
+
+            <article class="project">
+              <h3>Shanghai Jiao Tong University</h3>
+              <p class="project-date">Sep 2021-Jun 2025 · Shanghai, China</p>
+              <p class="project-date">Bachelor of Engineering in Energy and Power Engineering</p>
+            </article>
+          </div>
+        </section>
+
         <section class="card full" id="experience" aria-labelledby="experienceTitle">
           <div class="section-head">
             <h2 id="experienceTitle">
@@ -170,14 +195,23 @@
                 Research Intern
               </h3>
               <p class="project-date">
-                Jun 2026-present
+                Jun 2026-present · Singapore
               </p>
               <p class="project-date">
                 A*STAR · Advanced Remanufacturing and Technology Centre (ARTC)
               </p>
               <ul class="bullets">
                 <li>
-                  Research attachment in robot learning, focusing on robotic manipulation and reinforcement learning.
+                  Built a teleoperation data-collection platform (AlphaBot2 + exoskeleton) and the
+                  pipeline turning demonstrations into multi-task LeRobot datasets.
+                </li>
+                <li>
+                  LoRA fine-tuned π<sub>0.5</sub> as a frozen base policy for a multi-step bimanual
+                  PCB screw-fastening use case.
+                </li>
+                <li>
+                  Designed a force-aware residual RL layer (SAC + RLPD, human-in-the-loop) on top
+                  of the frozen VLA to handle contact-rich hole alignment and fastening.
                 </li>
               </ul>
             </article>
@@ -187,7 +221,7 @@
                 Algorithm Engineer (Intern)
               </h3>
               <p class="project-date">
-                Jun 2024-Sep 2024
+                Jun 2024-Sep 2024 · Shanghai, China
               </p>
               <p class="project-date">
                 Shanghai Ranjing Technology Co., Ltd.
@@ -217,7 +251,7 @@
           <div class="projects">
             <article class="project">
               <h3>
-                Enhancing Fine-Grained Manipulation with VLA
+                Fine-grained Manipulation of Humanoids Using VLA Model
               </h3>
               <p class="project-date">
                 Sep 2025-present
@@ -227,10 +261,13 @@
               </p>
               <ul class="bullets">
                 <li>
-                  Built an end-to-end pipeline from multimodal data collection on Mobile ALOHA to VLA policy fine-tuning and deployment.
+                  Collected multimodal data using Mobile ALOHA and developed a fine-tuning
+                  pipeline for VLA models for fine-grained humanoid manipulation.
                 </li>
                 <li>
-                  Compared policies on real tasks for data efficiency, transferability, and control stability to derive a more robust control strategy.
+                  Reproduced and benchmarked π<sub>0</sub>, ACT, and Diffusion Policy in LeRobot,
+                  comparing generalization, stability, transferability, and control responsiveness
+                  on real-world tasks.
                 </li>
               </ul>
               <div class="links">
@@ -296,25 +333,62 @@
 
             <article class="project">
               <h3>
-                Research on Flight Control of Kilogram Quadrotor Cyclocopter
+                Flight Control of Kilogram Quadrotor Cyclocopter
               </h3>
               <p class="project-date">
                 Dec 2024-May 2025
               </p>
               <p class="project-date">
-                Undergraduate Capstone Project
+                Undergraduate Final Year Project
               </p>
               <ul class="bullets">
                 <li>
-                  Implemented PID and EKF-based control on PX4, developed Gazebo plugins, and completed SITL and HITL simulations.
+                  Developed a PX4-based flight-control algorithm, implementing PID control and a
+                  sensor-fusion EKF.
                 </li>
                 <li>
-                  Achieved hovering and attitude stabilization, and completed control hardware and electrical system design and wiring.
+                  Built a Gazebo plugin for the rolling-wing physics model and achieved hovering
+                  and attitude control in SITL and HITL simulation.
+                </li>
+                <li>
+                  Designed the aircraft's control-system hardware and electrical system and
+                  completed the hardware wiring.
                 </li>
               </ul>
               <div class="links">
                 <a class="pill" href="https://github.com/Landau33/PX4-Cyclocopter" target="_blank" rel="noreferrer">
                   Repository
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <h3>
+                Modeling, Communication &amp; Control of SCARA Robot
+              </h3>
+              <p class="project-date">
+                May 2022-Sep 2023
+              </p>
+              <p class="project-date">
+                Research Program (PRP)
+              </p>
+              <ul class="bullets">
+                <li>
+                  Designed a machine-vision-based screw pre-tightening system and trained a YOLOv8
+                  model to detect screws and their types.
+                </li>
+                <li>
+                  Developed an end-effector with automatic bit switching and a force-feedback
+                  algorithm to determine tightening levels.
+                </li>
+                <li>
+                  Performed forward and inverse kinematics analysis and completed robot modeling
+                  and simulation in MATLAB.
+                </li>
+              </ul>
+              <div class="links">
+                <a class="pill" href="assets/docs/CV_TuYuang_en.pdf" target="_blank" rel="noreferrer">
+                  Details (CV)
                 </a>
               </div>
             </article>
@@ -361,7 +435,7 @@
             <li class="award">
               <span class="award-year">2022</span>
               <span class="award-name">
-                SJTU C-class Scholarship
+                SJTU University-level Scholarship
               </span>
             </li>
           </ul>
