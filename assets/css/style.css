@@ -491,6 +491,7 @@ button:focus-visible {
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 26px 18px;
 }
 
@@ -506,20 +507,10 @@ button:focus-visible {
 .photo-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   border: 1px solid #d0d0c9;
   border-radius: 2px;
   background: #eeece5;
-}
-
-.photo-card--featured img {
-  aspect-ratio: 16 / 9;
-  object-position: center 42%;
-}
-
-.photo-card--aquarium img {
-  object-position: center 43%;
 }
 
 .photo-card figcaption {
@@ -729,10 +720,6 @@ button:focus-visible {
 
   .photo-card--featured {
     grid-column: auto;
-  }
-
-  .photo-card--featured img {
-    aspect-ratio: 4 / 3;
   }
 
   .footer-inner {
