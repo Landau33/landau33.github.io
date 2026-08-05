@@ -148,6 +148,7 @@ button:focus-visible {
   width: 188px;
   height: 188px;
   object-fit: cover;
+  object-position: 50% 38%;
   border: 1px solid #c8c8c1;
   border-radius: 2px;
   box-shadow: 12px 12px 0 rgba(23, 50, 77, 0.08);
@@ -487,6 +488,48 @@ button:focus-visible {
   font-size: 14px;
 }
 
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 18px;
+}
+
+.photo-card {
+  min-width: 0;
+  margin: 0;
+}
+
+.photo-card--featured {
+  grid-column: 1 / -1;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid #d0d0c9;
+  border-radius: 2px;
+  background: #eeece5;
+}
+
+.photo-card--featured img {
+  aspect-ratio: 16 / 9;
+  object-position: center 42%;
+}
+
+.photo-card--aquarium img {
+  object-position: center 43%;
+}
+
+.photo-card figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .site-footer {
   color: #66717a;
   background: #eeece5;
@@ -677,6 +720,19 @@ button:focus-visible {
 
   .project-head time {
     padding: 0;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .photo-card--featured {
+    grid-column: auto;
+  }
+
+  .photo-card--featured img {
+    aspect-ratio: 4 / 3;
   }
 
   .footer-inner {
