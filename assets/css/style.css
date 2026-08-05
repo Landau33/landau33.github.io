@@ -345,6 +345,55 @@ button:focus-visible {
   letter-spacing: 0.01em;
 }
 
+.entry-body--branded {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.organization-mark {
+  width: 112px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  padding: 9px;
+  overflow: hidden;
+  border: 1px solid var(--soft-line);
+  border-radius: 3px;
+  background: #fff;
+}
+
+.organization-mark img {
+  display: block;
+  width: 100%;
+  max-height: 46px;
+  object-fit: contain;
+}
+
+.organization-mark--sjtu {
+  background: #a71930;
+  border-color: #a71930;
+}
+
+.organization-mark--artc {
+  padding: 12px 8px;
+}
+
+.organization-mark--ranjing {
+  padding: 7px;
+}
+
+.organization-mark--ranjing img {
+  width: 48px;
+  height: 48px;
+  border-radius: 7px;
+}
+
+.entry-copy {
+  min-width: 0;
+}
+
 .entry-body h3,
 .research-project h3 {
   margin: 0;
@@ -604,6 +653,21 @@ button:focus-visible {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px 12px;
+  }
+
+  .entry-body--branded {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .organization-mark {
+    width: 96px;
+    height: 58px;
+    padding: 8px;
+  }
+
+  .organization-mark img {
+    max-height: 42px;
   }
 
   .project-head {
