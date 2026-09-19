@@ -542,6 +542,28 @@ button:focus-visible {
   color: var(--line);
 }
 
+.pub-figure {
+  display: block;
+  margin-top: 14px;
+  padding: 10px;
+  border: 1px solid var(--soft-line);
+  border-radius: 8px;
+  background: var(--surface);
+  line-height: 0;
+  transition: border-color 0.18s ease;
+}
+
+.pub-figure:hover {
+  border-color: var(--teal);
+}
+
+.pub-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
 .publication .text-link {
   margin-top: 11px;
 }
