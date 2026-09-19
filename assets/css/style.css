@@ -564,8 +564,13 @@ button:focus-visible {
   border-radius: 4px;
 }
 
-.publication .text-link {
-  margin-top: 11px;
+.pub-venue a {
+  color: inherit;
+  text-decoration-color: rgba(47, 111, 112, 0.45);
+}
+
+.pub-venue a:hover {
+  color: var(--navy);
 }
 
 .award-list {
