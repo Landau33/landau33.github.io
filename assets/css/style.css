@@ -462,6 +462,90 @@ button:focus-visible {
   font-weight: 700;
 }
 
+.publication-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: publication;
+}
+
+.publication {
+  position: relative;
+  padding: 26px 0 26px 42px;
+  border-bottom: 1px solid var(--soft-line);
+  counter-increment: publication;
+}
+
+.publication:first-child {
+  padding-top: 5px;
+}
+
+.publication::before {
+  content: "[" counter(publication) "]";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.publication:first-child::before {
+  top: 9px;
+}
+
+.pub-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: start;
+}
+
+.pub-head h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.pub-head time {
+  padding-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pub-authors {
+  margin: 9px 0 0;
+  color: #4b5964;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pub-authors strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.pub-venue {
+  margin: 5px 0 0;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pub-sep {
+  color: var(--line);
+}
+
+.publication .text-link {
+  margin-top: 11px;
+}
+
 .award-list {
   margin: 0;
   padding: 0;
@@ -711,6 +795,19 @@ button:focus-visible {
 
   .project-head time {
     padding: 0;
+  }
+
+  .pub-head {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .pub-head time {
+    padding: 0;
+  }
+
+  .publication {
+    padding-left: 34px;
   }
 
   .photo-grid {
