@@ -96,7 +96,7 @@
               fine-tuning, and reinforcement learning.
             </p>
             <div class="research-interests" aria-label="Research interests">
-              <span>Robotics</span>
+              <span>Robot Learning</span>
               <span>Dexterous Manipulation</span>
               <span>VLA Models</span>
               <span>World Models</span>
@@ -112,7 +112,7 @@
             <div class="entry-list">
               <article class="entry">
                 <div class="entry-meta">
-                  <time>Aug. 2025 — Present</time>
+                  <time>Aug. 2025 — Jan. 2027</time>
                   <span>Singapore</span>
                 </div>
                 <div class="entry-body entry-body--branded">
@@ -163,8 +163,8 @@
                     <p class="entry-subtitle">Advanced Remanufacturing and Technology Centre (ARTC), A*STAR</p>
                     <ul>
                       <li>Built a teleoperation data-collection platform (AlphaBot2 + exoskeleton) and the pipeline turning demonstrations into multi-task LeRobot datasets.</li>
-                      <li>LoRA fine-tuned π<sub>0.5</sub> as a frozen base policy for a multi-step bimanual PCB screw-fastening use case.</li>
-                      <li>Designed a force-aware residual RL layer (SAC + RLPD, human-in-the-loop) on top of the frozen VLA to handle contact-rich hole alignment and fastening.</li>
+                      <li>Fine-tuned π<sub>0.5</sub> on a multi-step PCB screw-fastening task for a wheeled bimanual humanoid, then froze it as the base policy producing base actions.</li>
+                      <li>Trained a force-aware residual policy on top of the frozen π<sub>0.5</sub> for contact-rich hole alignment and fastening, taking visual features, proprioception, and force and torque signals as input and learning online on the real robot via SAC + RLPD with human interventions; a gate modulates the residual before composing it with the base action.</li>
                     </ul>
                   </div>
                 </div>
@@ -245,25 +245,26 @@
             <div class="project-list">
               <article class="research-project">
                 <div class="project-head">
-                  <h3>Fine-grained Manipulation of Humanoids Using VLA Model</h3>
+                  <h3>Fine-grained Mobile Manipulation with VLA Models</h3>
                   <time>Sep. 2025 — Present</time>
                 </div>
                 <p class="project-type">Master's Thesis</p>
                 <ul>
-                  <li>Collected multimodal data using Mobile ALOHA and developed a fine-tuning pipeline for VLA models for fine-grained humanoid manipulation.</li>
-                  <li>Reproduced and benchmarked π<sub>0</sub>, ACT, and Diffusion Policy in the LeRobot framework, comparing their generalization, stability, transferability, and control responsiveness on real-world tasks.</li>
+                  <li>Targeted fine-grained tasks requiring coordinated base motion and bimanual manipulation; collected whole-body teleoperated multimodal demonstrations on Mobile ALOHA and reproduced π<sub>0</sub>, ACT, and Diffusion Policy in LeRobot as baselines.</li>
+                  <li>Designed an MoT VLA with separate mobile and manipulation action experts, each with weights separate from the VLM backbone, modeling base and arm actions respectively.</li>
+                  <li>Proposed coupling-guided two-stage action generation: discrete flow matching first predicts a mobile-manipulation task-coupling level, which then sets the cross-expert attention bias for joint flow matching over base and arm actions.</li>
                 </ul>
               </article>
 
               <article class="research-project">
                 <div class="project-head">
                   <h3>AI for Industry Challenge by Intrinsic (Part of Google)</h3>
-                  <time>Feb. 2026 — Present</time>
+                  <time>Feb. 2026 — Aug. 2026</time>
                 </div>
-                <p class="project-type">International Challenge</p>
+                <p class="project-type">Core Member</p>
                 <ul>
-                  <li>Built an end-to-end HIL-SERL pipeline for 6-DoF robotic cable insertion based on the AIC benchmark, spanning training, inference, and evaluation.</li>
-                  <li>Developed the complete learning pipeline, including demonstration collection, reward classifier training, BC pretraining, RLPD policy optimization, human-in-the-loop refinement, and simulation evaluation.</li>
+                  <li>Built an end-to-end HIL-SERL system for 6-DoF robot-arm two-end cable insertion on the AIC benchmark, implementing the full chain of demonstration collection → reward classifier → BC pretraining → RLPD online optimization → human-in-the-loop refinement, evaluated in simulation.</li>
+                  <li>Ranked 7th of ~120 teams in the Qualification Phase with a fully automated HIL-SERL workflow, achieving 95% two-end insertion success on five cables over repeated rollouts across varied rail poses.</li>
                 </ul>
               </article>
 
@@ -276,7 +277,7 @@
                 <ul>
                   <li>Led the research, development, and maintenance of the infantry robot's mechanical structure (2022).</li>
                   <li>Led the quadrotor aerial robot project (2023): drone mechanical design in SolidWorks with lightweight, aerodynamic, and vibration optimizations based on simulation and testing.</li>
-                  <li>Conducted visual positioning experiments with the Intel RealSense T265, implementing sensor-fusion algorithms for localization and debugging VIO/VINS-based visual positioning.</li>
+                  <li>Captured image and IMU data with the Intel RealSense T265, configured sensor-fusion localization on the onboard computer, and tuned VIO/VINS-based visual positioning.</li>
                 </ul>
               </article>
 
@@ -289,7 +290,7 @@
                 <ul>
                   <li>Developed a flight control algorithm for a quadrotor cyclocopter based on the PX4 platform, implementing PID control and a sensor-fusion EKF algorithm.</li>
                   <li>Built a Gazebo plugin modeling the physical effects of the rolling wing and completed the full simulation model; achieved hovering and attitude control in SITL and HITL simulation.</li>
-                  <li>Designed the control-system hardware and electrical system of the aircraft and completed the hardware wiring.</li>
+                  <li>Designed the control-system hardware and electrical system of the aircraft and completed hardware wiring and debugging.</li>
                 </ul>
                 <a class="text-link" href="https://github.com/Landau33/PX4-Cyclocopter" target="_blank" rel="noopener noreferrer">View repository</a>
               </article>
@@ -309,9 +310,22 @@
             </div>
           </section>
 
-          <section class="academic-section" id="awards" aria-labelledby="awardsTitle">
+          <section class="academic-section" id="skills" aria-labelledby="skillsTitle">
             <div class="section-heading">
               <p class="section-index">05</p>
+              <h2 id="skillsTitle">Technical Skills</h2>
+            </div>
+            <ul class="skill-list">
+              <li><span class="skill-label">Programming &amp; Software</span><span>Python, C++, MATLAB, Linux, ROS, Docker, Git</span></li>
+              <li><span class="skill-label">Robot Learning</span><span>PyTorch, JAX; imitation learning, reinforcement learning, VLA models</span></li>
+              <li><span class="skill-label">Simulation</span><span>Isaac Sim, OmniGibson, MuJoCo, ManiSkill, Gazebo</span></li>
+              <li><span class="skill-label">Engineering</span><span>End-to-end robot mechanical design and assembly, electrical system design and integration, real-robot deployment and debugging across multiple platforms</span></li>
+            </ul>
+          </section>
+
+          <section class="academic-section" id="awards" aria-labelledby="awardsTitle">
+            <div class="section-heading">
+              <p class="section-index">06</p>
               <h2 id="awardsTitle">Academic Awards</h2>
             </div>
             <ol class="award-list">
@@ -326,7 +340,7 @@
 
           <section class="academic-section" id="photos" aria-labelledby="photosTitle">
             <div class="section-heading">
-              <p class="section-index">06</p>
+              <p class="section-index">07</p>
               <h2 id="photosTitle">Beyond the Lab</h2>
             </div>
             <div class="photo-grid">

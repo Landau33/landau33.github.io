@@ -116,7 +116,7 @@
               多模态数据采集、策略微调与强化学习。
             </p>
             <div class="research-interests" aria-label="研究兴趣">
-              <span>机器人学</span>
+              <span>机器人学习</span>
               <span>灵巧操作</span>
               <span>VLA 模型</span>
               <span>世界模型</span>
@@ -132,7 +132,7 @@
             <div class="entry-list">
               <article class="entry">
                 <div class="entry-meta">
-                  <time>2025 年 8 月 — 至今</time>
+                  <time>2025 年 8 月 — 2027 年 1 月</time>
                   <span>新加坡</span>
                 </div>
                 <div class="entry-body entry-body--branded">
@@ -183,8 +183,8 @@
                     <p class="entry-subtitle">新加坡科技研究局（A*STAR）先进再制造与技术中心（ARTC）</p>
                     <ul>
                       <li>搭建遥操作数据采集平台（AlphaBot2 + 外骨骼），并构建将示教数据转换为多任务 LeRobot 数据集的流程。</li>
-                      <li>对 π<sub>0.5</sub> 进行 LoRA 微调，作为冻结基础策略，应用于多步双臂 PCB 螺丝拧紧场景。</li>
-                      <li>在冻结的 VLA 之上设计力感知残差强化学习层（SAC + RLPD，人在回路），处理富接触的孔位对准与拧紧任务。</li>
+                      <li>针对轮式双臂人形机器人的多步 PCB 螺丝拧紧任务微调 π<sub>0.5</sub>，并将其冻结为输出基础动作的基础策略。</li>
+                      <li>在冻结的 π<sub>0.5</sub> 之上训练力感知残差策略，处理富接触的孔位对准与拧紧：以视觉特征、本体感知及力/力矩信号为输入，结合人工干预通过 SAC + RLPD 在真机上在线学习；由门控模块调制残差后再与基础动作合成。</li>
                     </ul>
                   </div>
                 </div>
@@ -265,25 +265,26 @@
             <div class="project-list">
               <article class="research-project">
                 <div class="project-head">
-                  <h3>基于 VLA 模型的人形机器人精细操作</h3>
+                  <h3>基于 VLA 模型的精细移动操作</h3>
                   <time>2025 年 9 月 — 至今</time>
                 </div>
                 <p class="project-type">硕士学位论文</p>
                 <ul>
-                  <li>使用 Mobile ALOHA 采集多模态数据，并开发面向人形机器人精细操作的 VLA 模型微调流程。</li>
-                  <li>在 LeRobot 框架中复现并基准测试 π<sub>0</sub>、ACT 与 Diffusion Policy，在真实任务上对比它们的泛化性、稳定性、迁移能力与控制响应速度。</li>
+                  <li>面向需要底盘运动与双臂操作协同的精细任务，在 Mobile ALOHA 上采集全身遥操作多模态示教数据，并在 LeRobot 中复现 π<sub>0</sub>、ACT 与 Diffusion Policy 作为基线。</li>
+                  <li>设计 MoT 架构的 VLA，分别设置移动与操作两个动作专家（权重均独立于 VLM 主干），分别建模底盘与机械臂动作。</li>
+                  <li>提出耦合引导的两阶段动作生成：先用离散流匹配预测移动-操作任务耦合等级，再据此设定跨专家注意力偏置，对底盘与机械臂动作进行联合流匹配生成。</li>
                 </ul>
               </article>
 
               <article class="research-project">
                 <div class="project-head">
                   <h3>Intrinsic（谷歌旗下公司）AI for Industry 挑战赛</h3>
-                  <time>2026 年 2 月 — 至今</time>
+                  <time>2026 年 2 月 — 2026 年 8 月</time>
                 </div>
-                <p class="project-type">国际赛事</p>
+                <p class="project-type">核心成员</p>
                 <ul>
-                  <li>基于 AIC 基准，构建面向 6 自由度机器人线缆插接任务的端到端 HIL-SERL 流程，覆盖训练、推理与评测。</li>
-                  <li>开发完整学习流程，包括示教数据采集、奖励分类器训练、BC 预训练、RLPD 策略优化、人在回路精调与仿真评测。</li>
+                  <li>基于 AIC 基准，构建面向 6 自由度机械臂线缆两端插接任务的端到端 HIL-SERL 系统，实现示教数据采集 → 奖励分类器 → BC 预训练 → RLPD 在线优化 → 人在回路精调的完整链路，并在仿真中评测。</li>
+                  <li>凭借全自动 HIL-SERL 流程在资格赛中位列约 120 支队伍中的第 7 名，在不同导轨位姿下对五种线缆的重复测试中实现 95% 的两端插接成功率。</li>
                 </ul>
               </article>
 
@@ -296,7 +297,7 @@
                 <ul>
                   <li>负责步兵机器人机械结构的研发与维护（2022 年）。</li>
                   <li>主导四旋翼空中机器人项目（2023 年）：在 SolidWorks 中完成无人机机械设计，并基于仿真与实验进行轻量化、气动与减振优化。</li>
-                  <li>使用 Intel RealSense T265 开展视觉定位实验，实现多传感器融合定位算法，并调试基于 VIO/VINS 的视觉定位方案。</li>
+                  <li>使用 Intel RealSense T265 采集图像与 IMU 数据，在机载计算机上配置多传感器融合定位，并调优基于 VIO/VINS 的视觉定位方案。</li>
                 </ul>
               </article>
 
@@ -309,7 +310,7 @@
                 <ul>
                   <li>基于 PX4 平台开发四旋翼摆线旋翼机飞行控制算法，实现 PID 控制与传感器融合 EKF 算法。</li>
                   <li>编写 Gazebo 插件对滚动翼的物理效应建模，完成整机仿真模型；在 SITL 与 HITL 仿真中实现悬停与姿态控制。</li>
-                  <li>设计飞行器控制系统硬件与电气系统，并完成硬件走线。</li>
+                  <li>设计飞行器控制系统硬件与电气系统，并完成硬件接线与调试。</li>
                 </ul>
                 <a class="text-link" href="https://github.com/Landau33/PX4-Cyclocopter" target="_blank" rel="noopener noreferrer">查看代码仓库</a>
               </article>
@@ -329,9 +330,22 @@
             </div>
           </section>
 
-          <section class="academic-section" id="awards" aria-labelledby="awardsTitle">
+          <section class="academic-section" id="skills" aria-labelledby="skillsTitle">
             <div class="section-heading">
               <p class="section-index">05</p>
+              <h2 id="skillsTitle">专业技能</h2>
+            </div>
+            <ul class="skill-list">
+              <li><span class="skill-label">编程与软件</span><span>Python、C++、MATLAB、Linux、ROS、Docker、Git</span></li>
+              <li><span class="skill-label">机器人学习</span><span>PyTorch、JAX；模仿学习、强化学习、VLA 模型</span></li>
+              <li><span class="skill-label">仿真</span><span>Isaac Sim、OmniGibson、MuJoCo、ManiSkill、Gazebo</span></li>
+              <li><span class="skill-label">工程能力</span><span>机器人机械结构端到端设计与装配、电气系统设计与集成，以及多平台真机部署与调试</span></li>
+            </ul>
+          </section>
+
+          <section class="academic-section" id="awards" aria-labelledby="awardsTitle">
+            <div class="section-heading">
+              <p class="section-index">06</p>
               <h2 id="awardsTitle">获奖与荣誉</h2>
             </div>
             <ol class="award-list">
@@ -346,7 +360,7 @@
 
           <section class="academic-section" id="photos" aria-labelledby="photosTitle">
             <div class="section-heading">
-              <p class="section-index">06</p>
+              <p class="section-index">07</p>
               <h2 id="photosTitle">实验室之外</h2>
             </div>
             <div class="photo-grid">

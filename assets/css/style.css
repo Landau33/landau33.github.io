@@ -573,6 +573,27 @@ button:focus-visible {
   color: var(--navy);
 }
 
+.skill-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--soft-line);
+  color: #3e4b55;
+  font-size: 14px;
+}
+
+.skill-list .skill-label {
+  color: var(--teal);
+  font-weight: 600;
+}
+
 .award-list {
   margin: 0;
   padding: 0;
@@ -705,6 +726,11 @@ button:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .skill-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
   .container {
     width: min(calc(100% - 32px), var(--max-width));
   }
