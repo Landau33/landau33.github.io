@@ -1048,9 +1048,14 @@ button:focus-visible {
   margin: 0;
 }
 
+.media-grid--portrait-landscape {
+  grid-template-columns: minmax(0, 0.5625fr) minmax(0, 1.78fr);
+}
+
 @media (max-width: 680px) {
   .pub-media--wide,
-  .pub-media--portrait {
+  .pub-media--portrait,
+  .media-grid--portrait-landscape {
     grid-template-columns: 1fr;
   }
 
