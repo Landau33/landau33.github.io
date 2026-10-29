@@ -98,6 +98,11 @@ button:focus-visible {
   text-decoration: none;
 }
 
+.wordmark-cn {
+  margin-left: 4px;
+  letter-spacing: 0.04em;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -214,6 +219,18 @@ button:focus-visible {
   margin-top: 22px;
   font-size: 13px;
   font-weight: 600;
+}
+
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-icon {
+  flex: none;
+  width: 15px;
+  height: 15px;
 }
 
 .main-column {
