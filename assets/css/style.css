@@ -119,19 +119,6 @@ button:focus-visible {
   color: var(--teal);
 }
 
-.site-nav .nav-cv {
-  padding: 7px 13px;
-  color: #fff;
-  background: var(--navy);
-  border: 1px solid var(--navy);
-}
-
-.site-nav .nav-cv:hover {
-  color: #fff;
-  background: var(--teal);
-  border-color: var(--teal);
-}
-
 .page-shell {
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
@@ -785,10 +772,6 @@ button:focus-visible {
     justify-content: flex-start;
     margin-top: 12px;
     font-size: 12px;
-  }
-
-  .site-nav .nav-cv {
-    padding: 4px 10px;
   }
 
   .page-shell {
