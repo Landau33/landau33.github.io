@@ -1146,3 +1146,18 @@ button:focus-visible {
     clip: rect(0 0 0 0);
   }
 }
+
+/* The CV document glyph is narrower than the other icons; size it up */
+.profile-links a .link-icon.icon-cv {
+  width: 26px;
+  height: 26px;
+  margin: -3px;
+}
+
+@media (max-width: 900px) and (min-width: 681px) {
+  .profile-links a .link-icon.icon-cv {
+    width: 19px;
+    height: 19px;
+    margin: -2px;
+  }
+}
