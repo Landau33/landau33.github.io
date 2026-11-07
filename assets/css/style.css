@@ -1089,7 +1089,9 @@ button:focus-visible {
   }
 }
 
-/* Visitor map (MapMyVisitors) — map only, no text */
+/* Visitor map (Flag Counter) — cropped to the map only:
+   the 600x291 image has a title band (top 20px), a logo band (below y=262)
+   and a 1px border; the frame shows x 1..599, y 20..262 */
 .visitor-map {
   margin-top: 26px;
   padding-top: 18px;
@@ -1097,32 +1099,22 @@ button:focus-visible {
   max-width: 250px;
 }
 
-.visitor-map #mapmyvisitors-widget {
-  min-height: 0 !important;
-  margin: 0 !important;
-}
-
-.visitor-map .mpmvs,
-.visitor-map .mapmyvisitors-loading,
-.visitor-map #clstminf {
-  display: none !important;
-}
-
-/* cover the +/- zoom marks baked into the map background */
-.visitor-map .mapmyvisitors-map::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 10%;
-  height: 36%;
-  background: #17324d;
-  pointer-events: none;
-}
-
-.visitor-map .mapmyvisitors-map-container {
+.visitor-map-frame {
+  position: relative;
+  display: block;
   overflow: hidden;
+  aspect-ratio: 598 / 242;
   border-radius: 2px;
+  background: #0b1a3a;
+}
+
+.visitor-map-frame img {
+  position: absolute;
+  top: calc(-100% * 20 / 242);
+  left: calc(-100% * 1 / 598);
+  width: calc(100% * 600 / 598);
+  max-width: none;
+  height: auto;
 }
 
 @media (max-width: 900px) {
